@@ -51,19 +51,18 @@ class PlanterTab extends StatelessWidget {
                 TextSpan(
                   text: 'Planter',
                   style: TextStyle(
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
                 ),
-                TextSpan(
-                  text: '.',
-                ),
+                TextSpan(text: '.'),
               ],
             ),
           ),
           const SizedBox(height: 15),
           const Text(
-            'You’re just getting started on your journey with Lintramax. Keep pushing forward to unlock more benefits and reach new heights!',
+            "You're just getting started on your journey with Lintramax. Keep pushing forward to unlock more benefits and reach new heights!",
             style: TextStyle(fontSize: 14, color: Colors.black),
           ),
           const SizedBox(height: 20),
@@ -78,13 +77,13 @@ class PlanterTab extends StatelessWidget {
                 child: const Icon(
                   Icons.attach_money,
                   color: Colors.white,
-                  size: 24,
+                  size: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
-              Text(
+              const Text(
                 'Standard pay',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -94,7 +93,7 @@ class PlanterTab extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5),
@@ -119,13 +118,13 @@ class PlanterTab extends StatelessWidget {
                 child: const Icon(
                   Icons.person,
                   color: Colors.white,
-                  size: 24,
+                  size: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
-              Text(
+              const Text(
                 'Basic training',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -135,7 +134,7 @@ class PlanterTab extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5),
@@ -199,13 +198,13 @@ class HarvesterTab extends StatelessWidget {
                 child: const Icon(
                   Icons.attach_money,
                   color: Colors.white,
-                  size: 24,
+                  size: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
-              Text(
+              const Text(
                 'Higher pay',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -215,7 +214,7 @@ class HarvesterTab extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5),
@@ -240,13 +239,13 @@ class HarvesterTab extends StatelessWidget {
                 child: const Icon(
                   Icons.person,
                   color: Colors.white,
-                  size: 24,
+                  size: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
-              Text(
+              const Text(
                 'Advanced job training',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -256,7 +255,7 @@ class HarvesterTab extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5),
@@ -321,13 +320,13 @@ class CultivatorTab extends StatelessWidget {
                 child: const Icon(
                   Icons.attach_money,
                   color: Colors.white,
-                  size: 24,
+                  size: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 12,
               ),
-              Text(
+              const Text(
                 'Even Higher pay',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -337,7 +336,7 @@ class CultivatorTab extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5),
@@ -362,13 +361,11 @@ class CultivatorTab extends StatelessWidget {
                 child: const Icon(
                   Icons.person,
                   color: Colors.white,
-                  size: 24,
+                  size: 20,
                 ),
               ),
-              SizedBox(
-                width: 12,
-              ),
-              Text(
+              const SizedBox(width: 12),
+              const Text(
                 'Leadership programs',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -378,7 +375,7 @@ class CultivatorTab extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5),

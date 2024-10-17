@@ -31,9 +31,7 @@ class Personal extends StatelessWidget {
                       bottom: 0,
                       right: 0,
                       child: GestureDetector(
-                        onTap: () {
-                          // Handle avatar edit
-                        },
+                        onTap: () {},
                         child: Container(
                           decoration: const BoxDecoration(
                             color: Colors.blue,
@@ -66,15 +64,14 @@ class Personal extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const TierPage()), // Replace 'AnotherPage()' with your target page
+                              builder: (context) => const TierPage()),
                         );
                       },
                       child: Row(
                         children: [
                           RichText(
                             text: const TextSpan(
-                              text: 'Cultivator ', // Normal text
+                              text: 'Planter ', // Normal text
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.green,
@@ -82,22 +79,20 @@ class Personal extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text:
-                                      'tier', // "tier" styled in green and bold
+                                  text: '   TIERS',
                                   style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.normal,
+                                    fontSize: 16.0,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          const SizedBox(
-                            width: 5, // Space between text and arrow
-                          ),
+                          const SizedBox(width: 5),
                           const Icon(
                             Icons.arrow_forward_ios,
-                            size: 16, // Adjust size to match text
+                            size: 12,
                             color: Colors.grey,
                           ),
                         ],

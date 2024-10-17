@@ -18,7 +18,6 @@ class TodayStats extends ConsumerWidget {
       child: selectedAreas.isEmpty
           ? Card(
               color: Colors.grey[200],
-              elevation: 4,
               child: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Column(
