@@ -7,12 +7,14 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
         title: const Text(
           'Home',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(padding: EdgeInsets.all(10), child: Text(('STAN IS GAY'))),
+      body: const Padding(
+          padding: EdgeInsets.all(10), child: Text(('STAN IS GAY'))),
     );
   }
 }
