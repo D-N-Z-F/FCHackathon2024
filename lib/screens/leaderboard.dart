@@ -60,14 +60,15 @@ class Leaderboard extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.grey[200],
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(30),
                               topRight: Radius.circular(30))),
-                      padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+                      padding:
+                          const EdgeInsets.only(top: 10, left: 10, right: 10),
                       width: double.infinity,
-                      child: SingleChildScrollView(
+                      child: const SingleChildScrollView(
                         child: Column(
-                          children: const [
+                          children: [
                             PodiumItem2(
                               name: "Sebastian",
                               points: 1124,
@@ -125,7 +126,7 @@ class Leaderboard extends StatelessWidget {
             )
           : Container(
               width: double.infinity,
-              padding: EdgeInsets.only(left: 5, right: 5, top: 5),
+              padding: const EdgeInsets.only(left: 5, right: 5, top: 5),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -258,7 +259,7 @@ class PodiumItem extends StatelessWidget {
       child: Column(
         children: [
           if (isCrowned)
-            Positioned(
+            const Positioned(
               top: -20,
               child: Icon(
                 Icons.emoji_events,
