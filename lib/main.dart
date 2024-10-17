@@ -55,33 +55,17 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(),
         colorScheme: ColorScheme.light(
-            primary: Colors.deepOrange,
-            secondary: Colors.orange.shade800,
-            tertiary: Colors.amber.shade700),
+          primary: Colors.deepOrange,
+          secondary: Colors.orange.shade800,
+          tertiary: Colors.amber.shade700,
+        ),
       ),
     );
   }
 }
 
-final areas = [
-  Area(areaName: 'A1'),
-  Area(areaName: 'A2'),
-  Area(areaName: 'A3'),
-  Area(areaName: 'A4'),
-  Area(areaName: 'A5'),
-  Area(areaName: 'A6'),
-  Area(areaName: 'A7'),
-  Area(areaName: 'A8'),
-  Area(areaName: 'A9'),
-  Area(areaName: 'B1'),
-  Area(areaName: 'B2'),
-  Area(areaName: 'B3'),
-  Area(areaName: 'B4'),
-  Area(areaName: 'B5'),
-  Area(areaName: 'B6'),
-  Area(areaName: 'B7'),
-  Area(areaName: 'B8'),
-];
+final areas = [for (var i = 0; i < 9; i++) Area(code: "A$i")] +
+    [for (var i = 0; i < 9; i++) Area(code: "B$i")];
 
 final shifts = [
   Shift(duration: "6 PM - 10 PM"),
