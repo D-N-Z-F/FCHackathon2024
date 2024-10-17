@@ -21,7 +21,6 @@ class Leaderboard extends StatelessWidget {
                   EdgeInsets.only(left: 5, right: 5, top: isPortrait ? 50 : 30),
               child: Column(
                 children: [
-                  // Top podium row for the top 3 players
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,14 +28,14 @@ class Leaderboard extends StatelessWidget {
                       PodiumItem(
                         name: "Vatani",
                         points: 1932,
-                        color: Colors.blueAccent, // Avatar color
-                        backColor: Color(0xffC0C0C0), // Silver for 2nd place
+                        color: Colors.blueAccent,
+                        backColor: Color(0xffC0C0C0),
                         rank: 2,
                       ),
                       PodiumItem(
                         name: "Iman",
                         points: 3459,
-                        color: Colors.orangeAccent, // Avatar color
+                        color: Colors.orangeAccent,
                         backColor: Color(0xffFFD700), // Gold for 1st place
                         rank: 1,
                         isCrowned: true, // Display crown for first place
@@ -44,7 +43,7 @@ class Leaderboard extends StatelessWidget {
                       PodiumItem(
                         name: "Jonathan",
                         points: 1431,
-                        color: Colors.orange, // Avatar color
+                        color: Colors.orange,
                         backColor: Color(0xffCD7F32), // Bronze for 3rd place
                         rank: 3,
                       ),
@@ -136,7 +135,7 @@ class Leaderboard extends StatelessWidget {
                         PodiumItem(
                           name: "Vatani",
                           points: 1932,
-                          color: Colors.blueAccent, // Avatar color
+                          color: Colors.blueAccent,
                           backColor: Color(0xffC0C0C0), // Silver for 2nd place
                           rank: 2,
                         ),
@@ -144,7 +143,7 @@ class Leaderboard extends StatelessWidget {
                         PodiumItem(
                           name: "Iman",
                           points: 3459,
-                          color: Colors.orangeAccent, // Avatar color
+                          color: Colors.orangeAccent,
                           backColor: Color(0xffFFD700), // Gold for 1st place
                           rank: 1,
                           isCrowned: true, // Display crown for first place
@@ -153,7 +152,7 @@ class Leaderboard extends StatelessWidget {
                         PodiumItem(
                           name: "Jonathan",
                           points: 1431,
-                          color: Colors.orange, // Avatar color
+                          color: Colors.orange,
                           backColor: Color(0xffCD7F32), // Bronze for 3rd place
                           rank: 3,
                         ),
@@ -270,8 +269,8 @@ class PodiumItem extends StatelessWidget {
             children: [
               // Circle with border
               Container(
-                height: rank == 1 ? 120 : 90, // Larger for 1st place
-                width: rank == 1 ? 120 : 90,
+                height: rank == 1 ? 110 : 80, // Larger for 1st place
+                width: rank == 1 ? 110 : 80,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
