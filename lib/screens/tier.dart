@@ -45,7 +45,7 @@ class PlanterTab extends StatelessWidget {
         children: [
           RichText(
             text: const TextSpan(
-              text: 'You are currently a ',
+              text: 'You have unlocked ',
               style: TextStyle(color: Colors.black, fontSize: 22),
               children: [
                 TextSpan(
@@ -165,7 +165,7 @@ class HarvesterTab extends StatelessWidget {
         children: [
           RichText(
             text: const TextSpan(
-              text: 'You are currently a ',
+              text: 'You have unlocked ',
               style: TextStyle(color: Colors.black, fontSize: 22),
               children: [
                 TextSpan(

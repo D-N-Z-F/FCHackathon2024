@@ -27,12 +27,7 @@ class AreaAlertDialog extends ConsumerWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                'assets/images/areas.jpg',
-                width: 500.0,
-                height: 500.0,
-                fit: BoxFit.cover,
-              ),
+              child: Image.asset('assets/images/areas.jpg'),
             ),
             const SizedBox(
               height: 10,

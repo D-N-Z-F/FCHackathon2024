@@ -78,13 +78,13 @@ class TodayStats extends ConsumerWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(10.0)),
-                                    content: const SingleChildScrollView(
+                                    content: SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text.rich(
+                                          const Text.rich(
                                             TextSpan(
                                               children: [
                                                 TextSpan(text: "You earned "),
@@ -106,7 +106,8 @@ class TodayStats extends ConsumerWidget {
                                                     text:
                                                         "You may miss out on "),
                                                 TextSpan(
-                                                  text: "RM450",
+                                                  text:
+                                                      "RM${selectedAreas.length * 150}",
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                     color: Color.fromARGB(

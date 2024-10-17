@@ -71,7 +71,7 @@ class Personal extends StatelessWidget {
                         children: [
                           RichText(
                             text: const TextSpan(
-                              text: 'Planter ', // Normal text
+                              text: 'Cultivator ', // Normal text
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.green,
