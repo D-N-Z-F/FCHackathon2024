@@ -15,7 +15,6 @@ class Leaderboard extends StatelessWidget {
     final topFourOnwards = users.sublist(2);
     return Scaffold(
       appBar: AppBar(
-        forceMaterialTransparency: true,
         title: const Text(
           'Leaderboard (Weekly)',
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -45,7 +44,9 @@ class Leaderboard extends StatelessWidget {
                             }))
                         .toList(),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 20), // Add spacing between sections
+
+                  // Expanded widget allows the scroll view to take up remaining space
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
@@ -103,7 +104,9 @@ class Leaderboard extends StatelessWidget {
                               }))
                           .toList(),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 20), // Add spacing between sections
+
+                    // PodiumItem2 section
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.grey[200],
