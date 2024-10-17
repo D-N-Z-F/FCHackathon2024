@@ -50,11 +50,12 @@ class MainApp extends StatelessWidget {
       routerConfig: routes,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          textTheme: GoogleFonts.poppinsTextTheme(),
-          colorScheme: ColorScheme.light(
-              primary: Colors.deepOrange,
-              secondary: Colors.orange.shade800,
-              tertiary: Colors.amber.shade700)),
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        colorScheme: ColorScheme.light(
+            primary: Colors.deepOrange,
+            secondary: Colors.orange.shade800,
+            tertiary: Colors.amber.shade700),
+      ),
     );
   }
 }
