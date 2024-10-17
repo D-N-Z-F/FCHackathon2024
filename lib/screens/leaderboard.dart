@@ -9,7 +9,6 @@ class Leaderboard extends StatelessWidget {
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: AppBar(
-      appBar: AppBar(
         title: const Text(
           'Leaderboard',
           style: TextStyle(fontWeight: FontWeight.bold),
