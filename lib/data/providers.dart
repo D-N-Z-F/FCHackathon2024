@@ -14,7 +14,7 @@ final shiftsProvider = StateProvider<List<Shift>>(
 );
 final areasProvider = StateProvider<List<Area>>(
   (ref) =>
-      [for (var i = 0; i < 9; i++) Area(code: "A$i")] +
-      [for (var i = 0; i < 9; i++) Area(code: "B$i")],
+      [for (var i = 1; i < 10; i++) Area(code: "A$i")] +
+      [for (var i = 1; i < 9; i++) Area(code: "B$i")],
 );
 final selectedAreasProvider = StateProvider<List<Area>>((ref) => []);

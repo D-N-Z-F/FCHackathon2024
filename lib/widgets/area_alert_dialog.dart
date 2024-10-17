@@ -25,6 +25,13 @@ class AreaAlertDialog extends ConsumerWidget {
       content: SingleChildScrollView(
         child: Column(
           children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset('assets/images/areas.jpg'),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             MultiDropdown<Area>(
               controller: areaController,
               items: areas
@@ -64,7 +71,8 @@ class AreaAlertDialog extends ConsumerWidget {
                 ),
               ),
               dropdownItemDecoration: const DropdownItemDecoration(
-                selectedIcon: Icon(Icons.check_box, color: Colors.green),
+                selectedIcon:
+                    Icon(Icons.check_box_rounded, color: Colors.green),
               ),
               onSelectionChange: (selectedItems) {
                 if (!recursionFlag) {
