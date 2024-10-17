@@ -1,10 +1,25 @@
+import 'package:fc_hackathon_2024/data/model/shift.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var shifts = [
+    Shift(duration: "6 PM - 10 PM"),
+    Shift(duration: "10 PM - 2 AM"),
+    Shift(duration: "2 AM - 6 AM"),
+  ];
+  @override
   Widget build(BuildContext context) {
+    void updateShifts(List<Shift> newList) {
+      setState(() => shifts = List.from(newList));
+    }
+
     return Scaffold(
       appBar: AppBar(
         forceMaterialTransparency: true,
@@ -264,10 +279,8 @@ class Home extends StatelessWidget {
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             TextSpan(
-                              text: " needed",
-                              style: TextStyle(
-                                fontSize: 16,
-                              ),
+                              text: " needed (Two Hour Shifts)",
+                              style: TextStyle(fontSize: 12),
                             ),
                           ],
                         ),
@@ -290,9 +303,9 @@ class Home extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Text(
-                    "3 two-hour slots remaining",
-                    style: TextStyle(
+                  Text(
+                    "${shifts.where((shift) => !shift.isSelected).length} slots remaining",
+                    style: const TextStyle(
                         color: Color.fromARGB(255, 254, 86, 20),
                         fontWeight: FontWeight.bold),
                   ),
@@ -303,63 +316,58 @@ class Home extends StatelessWidget {
                       onPressed: () {
                         showDialog(
                           context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: const Text(
-                                "Security",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                          builder: (BuildContext context) => StatefulBuilder(
+                            builder: (context, setState) {
+                              final subList = List<Shift>.from(shifts);
+                              return AlertDialog(
+                                title: const Text(
+                                  "Shifts Available",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              content: const SingleChildScrollView(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text.rich(
-                                      TextSpan(
-                                        children: [
-                                          TextSpan(text: "You earned "),
-                                          TextSpan(
-                                            text: "RM15",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold),
+                                content: SingleChildScrollView(
+                                  child: Column(
+                                    children: subList
+                                        .map(
+                                          (shift) => CheckboxListTile(
+                                            title: Text(shift.duration),
+                                            value: shift.isSelected,
+                                            onChanged: (value) {
+                                              setState(
+                                                () => shift.isSelected = value!,
+                                              );
+                                            },
                                           ),
-                                          TextSpan(text: " yesterday."),
-                                        ],
-                                      ),
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text.rich(
-                                      TextSpan(
-                                        children: [
-                                          TextSpan(text: "You missed out on "),
-                                          TextSpan(
-                                            text: "RM15",
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Color.fromARGB(
-                                                  255, 254, 86, 20),
-                                            ),
-                                          ),
-                                          TextSpan(text: "."),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
+                                        )
+                                        .toList(),
+                                  ),
                                 ),
-                              ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: const Text("Close"),
-                                ),
-                              ],
-                            );
-                          },
+                                actions: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      TextButton(
+                                        onPressed: () {
+                                          updateShifts(subList);
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text("Apply"),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text("Close"),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
                         );
                       },
                       child: const Text('I want in!'),
