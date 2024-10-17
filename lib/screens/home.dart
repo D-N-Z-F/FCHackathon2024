@@ -1,25 +1,15 @@
-import 'package:fc_hackathon_2024/data/model/shift.dart';
+import 'package:fc_hackathon_2024/data/providers.dart';
+import 'package:fc_hackathon_2024/widgets/area_alert_dialog.dart';
+import 'package:fc_hackathon_2024/widgets/shift_alert_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Home extends StatefulWidget {
+class Home extends ConsumerWidget {
   const Home({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  var shifts = [
-    Shift(duration: "6 PM - 10 PM"),
-    Shift(duration: "10 PM - 2 AM"),
-    Shift(duration: "2 AM - 6 AM"),
-  ];
-  @override
-  Widget build(BuildContext context) {
-    void updateShifts(List<Shift> newList) {
-      setState(() => shifts = List.from(newList));
-    }
-
+  Widget build(BuildContext context, WidgetRef ref) {
+    final shifts = ref.watch(shiftsProvider);
     return Scaffold(
       appBar: AppBar(
         forceMaterialTransparency: true,
@@ -38,6 +28,26 @@ class _HomeState extends State<Home> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 254, 86, 20)),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const AreaAlertDialog(),
+                  );
+                },
+                child: const Text(
+                  'Start your day!',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             const Text(
               "Take a look at yesterday's stats",
               style: TextStyle(
@@ -135,6 +145,7 @@ class _HomeState extends State<Home> {
                   LinearProgressIndicator(
                     value: 0.7,
                     backgroundColor: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(10),
                     color: const Color(0xff00D95F),
                     minHeight: 10,
                   ),
@@ -237,6 +248,7 @@ class _HomeState extends State<Home> {
                   LinearProgressIndicator(
                     value: 0.5,
                     backgroundColor: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(10),
                     color: const Color(0xffFFAA00),
                     minHeight: 10,
                   ),
@@ -316,58 +328,8 @@ class _HomeState extends State<Home> {
                       onPressed: () {
                         showDialog(
                           context: context,
-                          builder: (BuildContext context) => StatefulBuilder(
-                            builder: (context, setState) {
-                              final subList = List<Shift>.from(shifts);
-                              return AlertDialog(
-                                title: const Text(
-                                  "Shifts Available",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                content: SingleChildScrollView(
-                                  child: Column(
-                                    children: subList
-                                        .map(
-                                          (shift) => CheckboxListTile(
-                                            title: Text(shift.duration),
-                                            value: shift.isSelected,
-                                            onChanged: (value) {
-                                              setState(
-                                                () => shift.isSelected = value!,
-                                              );
-                                            },
-                                          ),
-                                        )
-                                        .toList(),
-                                  ),
-                                ),
-                                actions: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      TextButton(
-                                        onPressed: () {
-                                          updateShifts(subList);
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: const Text("Apply"),
-                                      ),
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: const Text("Close"),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
+                          builder: (BuildContext context) =>
+                              const ShiftAlertDialog(),
                         );
                       },
                       child: const Text('I want in!'),
