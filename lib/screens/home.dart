@@ -5,8 +5,14 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("HOME"),
+    return Scaffold(
+      appBar: AppBar.new(
+        title: const Text(
+          'Home',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Padding(padding: EdgeInsets.all(10), child: Text(('STAN IS GAY'))),
     );
   }
 }

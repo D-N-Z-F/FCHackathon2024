@@ -19,7 +19,7 @@ class TabContainer extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(top: 4.0),
             child: Column(
-              children: [Icon(Icons.home), Text("Home")],
+              children: [Icon(Icons.home_rounded), Text("Home")],
             ),
           )),
       const SizedBox(
@@ -27,7 +27,7 @@ class TabContainer extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(top: 4.0),
             child: Column(
-              children: [Icon(Icons.search), Text("Leaderboard")],
+              children: [Icon(Icons.leaderboard_rounded), Text("Leaderboard")],
             ),
           )),
       const SizedBox(
@@ -35,7 +35,7 @@ class TabContainer extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(top: 4.0),
             child: Column(
-              children: [Icon(Icons.shopping_cart_outlined), Text("Personal")],
+              children: [Icon(Icons.person_2_rounded), Text("Personal")],
             ),
           )),
     ];
