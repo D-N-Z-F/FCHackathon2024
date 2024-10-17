@@ -7,6 +7,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
         title: const Text(
           'Home',
           style: TextStyle(fontWeight: FontWeight.bold),
