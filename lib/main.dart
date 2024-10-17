@@ -1,3 +1,5 @@
+import 'package:fc_hackathon_2024/data/constants.dart';
+import 'package:fc_hackathon_2024/screens/auth.dart';
 import 'package:fc_hackathon_2024/screens/tab_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,12 +9,32 @@ void main() {
   runApp(const ProviderScope(child: MainApp()));
 }
 
+final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
+  static void showSnackbar({
+    IconData icon = Icons.error,
+    Color color = Colors.red,
+  }) =>
+      scaffoldMessengerKey.currentState?.showSnackBar(
+        SnackBar(
+          elevation: 4.0,
+          backgroundColor: Colors.red,
+          content: Row(children: [Icon(icon), const Text("Invalid Info")]),
+          duration: Constants.defaultLoadTime,
+        ),
+      );
+
   static final routes = GoRouter(
-    initialLocation: TabContainer.route,
+    initialLocation: Auth.route,
     routes: [
+      GoRoute(
+        path: Auth.route,
+        name: Auth.routeName,
+        builder: (context, state) => const Auth(),
+      ),
       GoRoute(
         path: TabContainer.route,
         name: TabContainer.routeName,
