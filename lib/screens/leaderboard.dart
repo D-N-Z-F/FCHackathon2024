@@ -84,64 +84,68 @@ class PodiumItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: height,
-          width: 120, // Take full screen width
-          decoration: BoxDecoration(
-            color: backColor,
-            borderRadius: _getBorderRadius(rank),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Profile picture and crown
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    // Profile picture
-                    backgroundColor: color.withOpacity(0.4),
-                  ),
-                  if (isCrowned)
-                    Positioned(
-                      top: -10,
-                      child: Icon(Icons.emoji_events,
-                          color: Colors.amber, size: 30),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+          horizontal: 0.0), // Adds padding to the sides
+      child: Column(
+        children: [
+          Container(
+            height: height,
+            width: MediaQuery.of(context).size.width / 3,
+            decoration: BoxDecoration(
+              color: backColor,
+              borderRadius: _getBorderRadius(rank),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Profile picture and crown
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    CircleAvatar(
+                      radius: 30,
+                      // Profile picture
+                      backgroundColor: color.withOpacity(0.4),
                     ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              // User info inside the box
-              Text(
-                name,
-                style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                '$points',
-                style: TextStyle(
-                    fontSize: 14, color: color, fontWeight: FontWeight.bold),
-              ),
-              const Text(
-                "@username",
-                style: TextStyle(color: Colors.grey, fontSize: 12),
-              ),
-            ],
+                    if (isCrowned)
+                      Positioned(
+                        top: -10,
+                        child: Icon(Icons.emoji_events,
+                            color: Colors.amber, size: 30),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                // User info inside the box
+                Text(
+                  name,
+                  style: const TextStyle(
+                      fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  '$points',
+                  style: TextStyle(
+                      fontSize: 14, color: color, fontWeight: FontWeight.bold),
+                ),
+                const Text(
+                  "@username",
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+              ],
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
-        // Rank number
-        Text(
-          '$rank',
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+          const SizedBox(height: 8),
+          // Rank number
+          Text(
+            '$rank',
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
