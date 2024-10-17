@@ -137,6 +137,7 @@ class _HomeState extends State<Home> {
                     backgroundColor: Colors.grey[300],
                     color: const Color(0xff00D95F),
                     minHeight: 10,
+                    borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                   ),
                   const SizedBox(height: 10),
                   const Text(
@@ -239,6 +240,7 @@ class _HomeState extends State<Home> {
                     backgroundColor: Colors.grey[300],
                     color: const Color(0xffFFAA00),
                     minHeight: 10,
+                    borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                   ),
                   const SizedBox(height: 10),
                   const Text(

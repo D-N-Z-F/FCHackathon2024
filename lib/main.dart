@@ -1,4 +1,5 @@
 import 'package:fc_hackathon_2024/data/constants.dart';
+import 'package:fc_hackathon_2024/data/model/user.dart';
 import 'package:fc_hackathon_2024/screens/auth.dart';
 import 'package:fc_hackathon_2024/screens/tab_container.dart';
 import 'package:flutter/material.dart';
@@ -59,3 +60,83 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+final List<User> users = [
+  User(
+    name: "Vatani",
+    username: "vatani123",
+    email: "vatani@example.com",
+    phoneNo: "+1234567890",
+    allTimeEarned: 1932.00,
+    weeklyEarned: 500.00,
+    dailyEarned: 100.00,
+  ),
+  User(
+    name: "Iman",
+    username: "iman456",
+    email: "iman@example.com",
+    phoneNo: "+0987654321",
+    allTimeEarned: 3459.00,
+    weeklyEarned: 700.00,
+    dailyEarned: 150.00,
+  ),
+  User(
+    name: "Jonathan",
+    username: "jonathan789",
+    email: "jonathan@example.com",
+    phoneNo: "+1357924680",
+    allTimeEarned: 1431.00,
+    weeklyEarned: 400.00,
+    dailyEarned: 90.00,
+  ),
+  User(
+    name: "Sebastian",
+    username: "username",
+    email: "sebastian@example.com",
+    phoneNo: "+1112223333",
+    allTimeEarned: 1124.00,
+    weeklyEarned: 300.00,
+    dailyEarned: 80.00,
+    isUp: true,
+  ),
+  User(
+    name: "Logan",
+    username: "username",
+    email: "logan@example.com",
+    phoneNo: "+2223334444",
+    allTimeEarned: 875.00,
+    weeklyEarned: 200.00,
+    dailyEarned: 60.00,
+    isUp: false,
+  ),
+  User(
+    name: "Natalie",
+    username: "username",
+    email: "natalie@example.com",
+    phoneNo: "+3334445555",
+    allTimeEarned: 774.00,
+    weeklyEarned: 150.00,
+    dailyEarned: 50.00,
+    isUp: true,
+  ),
+  User(
+    name: "Serenity",
+    username: "username",
+    email: "serenity@example.com",
+    phoneNo: "+4445556666",
+    allTimeEarned: 723.00,
+    weeklyEarned: 130.00,
+    dailyEarned: 45.00,
+    isUp: true,
+  ),
+  User(
+    name: "Hannah",
+    username: "username",
+    email: "hannah@example.com",
+    phoneNo: "+5556667777",
+    allTimeEarned: 559.00,
+    weeklyEarned: 100.00,
+    dailyEarned: 30.00,
+    isUp: false,
+  ),
+];
