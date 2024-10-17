@@ -6,7 +6,7 @@ class Personal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar.new(
+      appBar: AppBar(
         title: const Text(
           'Personal',
           style: TextStyle(fontWeight: FontWeight.bold),
