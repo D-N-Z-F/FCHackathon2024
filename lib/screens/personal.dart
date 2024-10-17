@@ -5,8 +5,14 @@ class Personal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("PERSONAL"),
+    return Scaffold(
+      appBar: AppBar.new(
+        title: const Text(
+          'Personal',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Padding(padding: EdgeInsets.all(10), child: Text(('STAN IS GAY'))),
     );
   }
 }
