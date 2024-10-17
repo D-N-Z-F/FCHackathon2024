@@ -1,3 +1,4 @@
+import 'package:fc_hackathon_2024/screens/tier.dart';
 import 'package:fc_hackathon_2024/widgets/history_card.dart';
 import 'package:flutter/material.dart';
 
@@ -18,54 +19,95 @@ class Personal extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Column(
+            Row(
               children: [
-                const CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage('assets/images/userIcon.jpg'),
+                Stack(
+                  children: [
+                    const CircleAvatar(
+                      radius: 60,
+                      backgroundImage: AssetImage('assets/images/userIcon.jpg'),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: GestureDetector(
+                        onTap: () {
+                          // Handle avatar edit
+                        },
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.blue,
+                            shape: BoxShape.circle,
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: const Icon(
+                            Icons.edit,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 10),
-                TextButton(
-                  onPressed: () {
-                    // Implement photo upload functionality here
-                  },
-                  child: const Text('Upload Photo'),
+                const SizedBox(width: 16), // Space between avatar and text
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "John Doe",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 5),
+                    InkWell(
+                      onTap: () {
+                        // Navigate to another page
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const TierPage()), // Replace 'AnotherPage()' with your target page
+                        );
+                      },
+                      child: Row(
+                        children: [
+                          RichText(
+                            text: const TextSpan(
+                              text: 'Cultivator ', // Normal text
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text:
+                                      'tier', // "tier" styled in green and bold
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 5, // Space between text and arrow
+                          ),
+                          const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 16, // Adjust size to match text
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey[300]!),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Your Name",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        "John Doe",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('Edit'),
-                  ),
-                ],
-              ),
-            ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 8),
               padding: const EdgeInsets.all(16),
