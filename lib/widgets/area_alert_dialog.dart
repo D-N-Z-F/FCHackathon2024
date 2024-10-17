@@ -27,7 +27,12 @@ class AreaAlertDialog extends ConsumerWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset('assets/images/areas.jpg'),
+              child: Image.asset(
+                'assets/images/areas.jpg',
+                width: 500.0,
+                height: 500.0,
+                fit: BoxFit.cover,
+              ),
             ),
             const SizedBox(
               height: 10,
@@ -100,6 +105,7 @@ class AreaAlertDialog extends ConsumerWidget {
                     area.copy(isSelected: selectedAreas.contains(area)),
                   );
                 }
+                ref.read(areasProvider.notifier).state = newAreas;
                 Navigator.of(context).pop();
               },
               child: const Text("Apply"),
