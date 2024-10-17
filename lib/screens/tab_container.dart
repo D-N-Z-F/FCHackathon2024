@@ -15,29 +15,26 @@ class TabContainer extends StatelessWidget {
 
     final tabList = [
       const SizedBox(
-          height: 50.0,
-          child: Padding(
-            padding: EdgeInsets.only(top: 4.0),
-            child: Column(
-              children: [Icon(Icons.home_rounded), Text("Home")],
-            ),
-          )),
+        height: 50.0,
+        child: Padding(
+          padding: EdgeInsets.only(top: 4.0),
+          child: Icon(Icons.home),
+        ),
+      ),
       const SizedBox(
-          height: 50.0,
-          child: Padding(
-            padding: EdgeInsets.only(top: 4.0),
-            child: Column(
-              children: [Icon(Icons.leaderboard_rounded), Text("Leaderboard")],
-            ),
-          )),
+        height: 50.0,
+        child: Padding(
+          padding: EdgeInsets.only(top: 4.0),
+          child: Icon(Icons.leaderboard),
+        ),
+      ),
       const SizedBox(
-          height: 50.0,
-          child: Padding(
-            padding: EdgeInsets.only(top: 4.0),
-            child: Column(
-              children: [Icon(Icons.person_2_rounded), Text("Personal")],
-            ),
-          )),
+        height: 50.0,
+        child: Padding(
+          padding: EdgeInsets.only(top: 4.0),
+          child: Icon(Icons.supervised_user_circle),
+        ),
+      ),
     ];
 
     return DefaultTabController(

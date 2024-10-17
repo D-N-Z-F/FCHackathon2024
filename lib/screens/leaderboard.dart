@@ -9,6 +9,7 @@ class Leaderboard extends StatelessWidget {
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: AppBar(
+      appBar: AppBar(
         title: const Text(
           'Leaderboard',
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -26,7 +27,6 @@ class Leaderboard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // Second place
                       PodiumItem(
                         name: "Vatani",
                         points: 1932,
@@ -34,7 +34,6 @@ class Leaderboard extends StatelessWidget {
                         backColor: Color(0xffC0C0C0), // Silver for 2nd place
                         rank: 2,
                       ),
-                      // First place
                       PodiumItem(
                         name: "Iman",
                         points: 3459,
@@ -43,7 +42,6 @@ class Leaderboard extends StatelessWidget {
                         rank: 1,
                         isCrowned: true, // Display crown for first place
                       ),
-                      // Third place
                       PodiumItem(
                         name: "Jonathan",
                         points: 1431,
@@ -243,14 +241,14 @@ class PodiumItem extends StatelessWidget {
   final bool isCrowned;
 
   const PodiumItem({
-    Key? key,
+    super.key,
     required this.name,
     required this.points,
     required this.color,
     required this.rank,
     required this.backColor,
     this.isCrowned = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

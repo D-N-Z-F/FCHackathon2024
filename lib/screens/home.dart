@@ -6,7 +6,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar.new(
+      appBar: AppBar(
         title: const Text(
           'Home',
           style: TextStyle(fontWeight: FontWeight.bold),
